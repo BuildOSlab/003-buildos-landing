@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import "./../styles/globals/index.css";
 
 export const metadata: Metadata = {
-  title: "BuildOS",
-  description: "BuildOS — the construction platform.",
+  title: "BuildOS — The Operating Platform for Construction",
+  description:
+    "BuildOS connects construction materials, delivery, workforce, projects, and property services in one platform.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">

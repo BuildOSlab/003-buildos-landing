@@ -1,8 +1,39 @@
+import {
+  BenefitsSection,
+  CTASection,
+  DeliverySection,
+  DiasporaSection,
+  Footer,
+  Header,
+  Hero,
+  HowItWorks,
+  LandVerificationSection,
+  MarketplaceSection,
+  ProjectsSection,
+  TrustSection,
+  WorkforceSection,
+} from "@/components/landing";
+
 export default function HomePage() {
   return (
-    <main>
-      <h1>BuildOS</h1>
-      <p>Building the future of construction.</p>
-    </main>
+    <>
+      <Header />
+
+      <main>
+        <Hero />
+        <BenefitsSection />
+        <MarketplaceSection />
+        <HowItWorks />
+        <DeliverySection />
+        <WorkforceSection />
+        <ProjectsSection />
+        <LandVerificationSection />
+        <DiasporaSection />
+        <TrustSection />
+        <CTASection />
+      </main>
+
+      <Footer />
+    </>
   );
 }

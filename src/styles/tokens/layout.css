@@ -2,15 +2,12 @@
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
-  --container-xl: 1280px;
-  --container-2xl: 1440px;
+  --container-xl: 1200px;
 
-  --content-max-width: 1280px;
+  --header-height: 76px;
 
-  --section-space-sm: 4rem;
-  --section-space-md: 6rem;
-  --section-space-lg: 8rem;
-  --section-space-xl: 10rem;
+  --section-padding-y: 112px;
+  --section-padding-y-mobile: 76px;
 
-  --nav-height: 72px;
+  --content-max: 720px;
 }

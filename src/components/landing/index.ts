@@ -1,0 +1,13 @@
+export { BenefitsSection } from "./BenefitsSection";
+export { CTASection } from "./CTASection";
+export { DeliverySection } from "./DeliverySection";
+export { DiasporaSection } from "./DiasporaSection";
+export { Footer } from "./Footer";
+export { Header } from "./Header";
+export { Hero } from "./Hero";
+export { HowItWorks } from "./HowItWorks";
+export { LandVerificationSection } from "./LandVerificationSection";
+export { MarketplaceSection } from "./MarketplaceSection";
+export { ProjectsSection } from "./ProjectsSection";
+export { TrustSection } from "./TrustSection";
+export { WorkforceSection } from "./WorkforceSection";

@@ -1,7 +1,7 @@
-@keyframes fade-up {
+@keyframes landing-fade-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(18px);
   }
 
   to {
@@ -10,67 +10,25 @@
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
+@keyframes landing-pulse {
   0%,
   100% {
-    transform: translateY(0);
+    box-shadow: 0 0 0 0 rgb(15 118 110 / 0.15);
   }
 
   50% {
-    transform: translateY(-10px);
+    box-shadow: 0 0 0 10px rgb(15 118 110 / 0);
   }
 }
 
-@keyframes pulse-soft {
-  0%,
-  100% {
-    opacity: 0.65;
-  }
-
-  50% {
-    opacity: 1;
-  }
+.landing-hero__content {
+  animation: landing-fade-up 700ms var(--ease-standard) both;
 }
 
-.animate-fade-up {
-  animation:
-    fade-up var(--duration-slower)
-    var(--ease-emphasized) both;
+.landing-hero__visual {
+  animation: landing-fade-up 800ms 100ms var(--ease-standard) both;
 }
 
-.animate-fade-in {
-  animation:
-    fade-in var(--duration-slow)
-    var(--ease-standard) both;
-}
-
-.animate-float {
-  animation:
-    float 5s ease-in-out infinite;
-}
-
-.animate-pulse-soft {
-  animation:
-    pulse-soft 3s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
+.landing-eyebrow__dot {
+  animation: landing-pulse 2s infinite;
 }
