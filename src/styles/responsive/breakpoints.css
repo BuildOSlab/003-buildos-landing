@@ -1,0 +1,37 @@
+@media (min-width: 640px) {
+  .container {
+    width: min(
+      calc(100% - 3rem),
+      var(--content-max-width)
+    );
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--section-space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: var(--section-space-xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    width: min(
+      calc(100% - 4rem),
+      var(--content-max-width)
+    );
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --section-space-lg: 4.5rem;
+    --section-space-xl: 5rem;
+    --nav-height: 64px;
+  }
+}

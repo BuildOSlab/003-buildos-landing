@@ -1,0 +1,16 @@
+:root {
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+
+  --content-max-width: 1280px;
+
+  --section-space-sm: 4rem;
+  --section-space-md: 6rem;
+  --section-space-lg: 8rem;
+  --section-space-xl: 10rem;
+
+  --nav-height: 72px;
+}
