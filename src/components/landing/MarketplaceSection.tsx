@@ -1,103 +1,177 @@
-import { Container } from "@/components/ui";
-
-const marketplaceItems = [
-  {
-    icon: "M",
-    title: "Materials",
-    description: "Discover construction materials from trusted sellers.",
-  },
-  {
-    icon: "S",
-    title: "Services",
-    description: "Find professionals for the work your project needs.",
-  },
-  {
-    icon: "W",
-    title: "Workforce",
-    description: "Connect projects with available skilled workers.",
-  },
-];
-
 export function MarketplaceSection() {
   return (
-    <section id="marketplace" className="landing-section landing-marketplace">
-      <Container>
-        <div className="split-section">
-          <div className="split-section__content">
-            <span className="landing-kicker">MARKETPLACE</span>
+    <section
+      id="marketplace"
+      className="landing-section landing-marketplace"
+    >
+      <div className="marketplace-container">
+        {/* =====================================================
+            INTRO
+        ====================================================== */}
 
-            <h2 className="landing-section__title">
-              Find what your project needs,
-              <span> in one place.</span>
-            </h2>
+        <div className="landing-section__intro marketplace-intro">
+          <span className="marketplace-eyebrow">
+            BUILDOS MARKETPLACE
+          </span>
 
-            <p className="landing-section__description">
-              BuildOS creates a connected marketplace for construction
-              materials, services and workforce.
-            </p>
+          <h2 className="landing-section__title">
+            Find what your
+            <span> project needs.</span>
+          </h2>
 
-            <div className="feature-list">
-              {marketplaceItems.map((item) => (
-                <div className="feature-list__item" key={item.title}>
-                  <span className="feature-list__icon">{item.icon}</span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                  <span className="feature-list__arrow">→</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="marketplace-visual">
-            <div className="marketplace-panel">
-              <div className="marketplace-panel__header">
-                <div>
-                  <span>BUILDOS MARKETPLACE</span>
-                  <strong>Popular near you</strong>
-                </div>
-                <span className="marketplace-panel__filter">Filter</span>
-              </div>
-
-              <div className="marketplace-search">
-                <span>⌕</span>
-                <span>Search materials, services...</span>
-              </div>
-
-              <div className="marketplace-product">
-                <div className="product-image product-image--cement">C</div>
-                <div className="product-info">
-                  <strong>Premium Cement</strong>
-                  <span>50kg · Verified seller</span>
-                  <b>₦9,800</b>
-                </div>
-                <button type="button">+</button>
-              </div>
-
-              <div className="marketplace-product">
-                <div className="product-image product-image--steel">S</div>
-                <div className="product-info">
-                  <strong>Reinforcement Steel</strong>
-                  <span>12mm · TMT</span>
-                  <b>₦785,000</b>
-                </div>
-                <button type="button">+</button>
-              </div>
-
-              <div className="marketplace-product">
-                <div className="product-image product-image--blocks">B</div>
-                <div className="product-info">
-                  <strong>9-inch Blocks</strong>
-                  <span>Quality verified</span>
-                  <b>₦850</b>
-                </div>
-                <button type="button">+</button>
-              </div>
-            </div>
-          </div>
+          <p className="landing-section__description">
+            BuildOS brings construction materials, professional
+            services, and skilled workforce together in one
+            connected marketplace.
+          </p>
         </div>
-      </Container>
+
+        {/* =====================================================
+            MARKETPLACE GRID
+        ====================================================== */}
+
+        <div className="marketplace-grid">
+
+          {/* =================================================
+              MATERIALS
+          ================================================== */}
+
+          <article className="marketplace-card marketplace-card--materials">
+            <div className="marketplace-card__top">
+              <div className="marketplace-card__icon">
+                <span>M</span>
+              </div>
+
+              <span className="marketplace-card__number">
+                01
+              </span>
+            </div>
+
+            <div className="marketplace-card__content">
+              <span className="marketplace-card__eyebrow">
+                MATERIALS
+              </span>
+
+              <h3>
+                Everything your
+                <br />
+                project needs.
+              </h3>
+
+              <p>
+                Discover construction materials from trusted
+                sellers and verified suppliers.
+              </p>
+            </div>
+
+            <div className="marketplace-card__footer">
+              <span>Explore materials</span>
+
+              <span className="marketplace-card__arrow">
+                →
+              </span>
+            </div>
+          </article>
+
+          {/* =================================================
+              SERVICES
+          ================================================== */}
+
+          <article className="marketplace-card marketplace-card--services">
+            <div className="marketplace-card__top">
+              <div className="marketplace-card__icon">
+                <span>S</span>
+              </div>
+
+              <span className="marketplace-card__number">
+                02
+              </span>
+            </div>
+
+            <div className="marketplace-card__content">
+              <span className="marketplace-card__eyebrow">
+                SERVICES
+              </span>
+
+              <h3>
+                Find the right
+                <br />
+                professionals.
+              </h3>
+
+              <p>
+                Connect with professionals and service providers
+                for every stage of your project.
+              </p>
+            </div>
+
+            <div className="marketplace-card__footer">
+              <span>Find services</span>
+
+              <span className="marketplace-card__arrow">
+                →
+              </span>
+            </div>
+          </article>
+
+          {/* =================================================
+              WORKFORCE
+          ================================================== */}
+
+          <article className="marketplace-card marketplace-card--workforce">
+            <div className="marketplace-card__top">
+              <div className="marketplace-card__icon">
+                <span>W</span>
+              </div>
+
+              <span className="marketplace-card__number">
+                03
+              </span>
+            </div>
+
+            <div className="marketplace-card__content">
+              <span className="marketplace-card__eyebrow">
+                WORKFORCE
+              </span>
+
+              <h3>
+                Skilled people
+                <br />
+                for the job.
+              </h3>
+
+              <p>
+                Connect construction projects with available
+                skilled workers when and where they are needed.
+              </p>
+            </div>
+
+            <div className="marketplace-card__footer">
+              <span>Find workforce</span>
+
+              <span className="marketplace-card__arrow">
+                →
+              </span>
+            </div>
+          </article>
+
+        </div>
+
+        {/* =====================================================
+            MARKETPLACE FOOTER
+        ====================================================== */}
+
+        <div className="marketplace-summary">
+          <span className="marketplace-summary__line" />
+
+          <p>
+            One marketplace.
+            <strong> Everything connected.</strong>
+          </p>
+
+          <span className="marketplace-summary__line" />
+        </div>
+      </div>
     </section>
   );
 }

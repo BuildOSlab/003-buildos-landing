@@ -1,0 +1,44 @@
+.about-cta {
+  padding: 40px 0 100px;
+  background: var(--color-bg);
+}
+
+.about-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: clamp(40px, 6vw, 70px);
+  border-radius: 32px;
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgb(45 212 191 / 0.16),
+      transparent 30%
+    ),
+    var(--color-primary);
+  color: white;
+}
+
+.about-cta .about-kicker {
+  color: #99f6e4;
+}
+
+.about-cta h2 {
+  max-width: 650px;
+  margin-top: 14px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.about-cta h2 span {
+  color: #99f6e4;
+}
+
+.about-cta p {
+  max-width: 580px;
+  margin-top: 18px;
+  color: rgb(255 255 255 / 0.68);
+  line-height: 1.7;
+}

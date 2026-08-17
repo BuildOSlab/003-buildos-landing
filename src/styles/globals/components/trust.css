@@ -1,0 +1,97 @@
+/* =========================================================
+   TRUST
+========================================================= */
+
+.landing-trust {
+  background:
+    var(--color-bg);
+}
+
+
+/* =========================================================
+   TRUST GRID
+========================================================= */
+
+.trust-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   TRUST CARD
+========================================================= */
+
+.trust-card {
+  padding: 28px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-xl);
+
+  background:
+    var(--color-surface);
+
+  color:
+    var(--color-text);
+}
+
+
+/* =========================================================
+   TRUST ICON
+========================================================= */
+
+.trust-card__icon {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background:
+    var(--color-primary-soft);
+
+  color:
+    var(--color-primary);
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   TRUST TITLE
+========================================================= */
+
+.trust-card h3 {
+  margin-top: 24px;
+
+  color:
+    var(--color-text);
+
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   TRUST DESCRIPTION
+========================================================= */
+
+.trust-card p {
+  margin-top: 9px;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 0.78rem;
+
+  line-height: 1.6;
+}

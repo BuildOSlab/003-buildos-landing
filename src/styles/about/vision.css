@@ -1,0 +1,50 @@
+.about-vision {
+  background: var(--color-surface);
+}
+
+.about-vision__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.about-vision__heading {
+  position: sticky;
+  top: 120px;
+}
+
+.about-vision__content {
+  max-width: 650px;
+}
+
+.about-vision__content p {
+  color: var(--color-text-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-vision__content p + p {
+  margin-top: 20px;
+}
+
+.about-vision__quote {
+  margin-top: 45px;
+  padding: 25px;
+  border-left: 3px solid var(--color-primary);
+  background: var(--color-bg-soft);
+}
+
+.about-vision__quote span {
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.62rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.about-vision__quote strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.2rem;
+}

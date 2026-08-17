@@ -1,0 +1,100 @@
+/* =========================================================
+   SERVICES — TRUST
+========================================================= */
+
+.services-trust {
+  padding: clamp(80px, 9vw, 130px) 0;
+
+  background: var(--color-bg);
+}
+
+.services-trust__card {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+
+  align-items: center;
+
+  gap: clamp(40px, 7vw, 90px);
+
+  padding: clamp(40px, 6vw, 80px);
+
+  border: 1px solid var(--color-border);
+  border-radius: 32px;
+
+  background: var(--color-surface);
+
+  color: var(--color-text);
+
+  box-shadow: var(--shadow-md);
+}
+
+.services-trust__content {
+  max-width: 620px;
+}
+
+.services-trust__content h2 {
+  color: var(--color-text);
+}
+
+.services-trust__content h2 span {
+  color: var(--color-primary);
+}
+
+.services-trust__content p {
+  margin-top: 22px;
+
+  color: var(--color-text-soft);
+
+  opacity: 1;
+}
+
+.services-trust__points {
+  display: grid;
+
+  gap: 12px;
+}
+
+.services-trust__points > div {
+  padding: 22px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-soft);
+
+  color: var(--color-text);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.services-trust__points strong {
+  color: var(--color-text);
+
+  font-size: 0.95rem;
+}
+
+.services-trust__points p {
+  margin-top: 8px;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.78rem;
+
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .services-trust__card {
+    grid-template-columns: 1fr;
+
+    padding: 40px 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .services-trust__card {
+    border-radius: 24px;
+  }
+}
+

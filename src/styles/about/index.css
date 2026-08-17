@@ -1,0 +1,95 @@
+@import "./hero.css";
+@import "./problem.css";
+@import "./solution.css";
+@import "./vision.css";
+@import "./mission.css";
+@import "./features.css";
+@import "./future.css";
+@import "./cta.css";
+
+
+/* =========================================================
+   ABOUT PAGE — BASE
+========================================================= */
+
+.about-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.about-page .container {
+  width: min(100% - 40px, 1180px);
+  margin-inline: auto;
+}
+
+.about-section {
+  position: relative;
+  padding-block: clamp(72px, 9vw, 120px);
+}
+
+.about-section__intro {
+  width: min(100%, 700px);
+  margin-bottom: 48px;
+}
+
+.about-section__intro--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: var(--color-primary);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.about-section h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.about-section h2 span {
+  color: var(--color-primary);
+}
+
+.about-section p {
+  color: var(--color-text-soft);
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .about-page .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .about-section {
+    padding-block: 64px;
+  }
+
+  .about-section__intro {
+    margin-bottom: 32px;
+  }
+
+  .about-section h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+}

@@ -1,0 +1,73 @@
+/* =========================================================
+   SERVICES — PARTICIPANTS
+========================================================= */
+
+.services-participants {
+  padding: clamp(80px, 9vw, 130px) 0;
+
+  background: var(--color-bg-soft);
+}
+
+.services-participants__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+
+  gap: clamp(50px, 8vw, 100px);
+}
+
+.services-participants__content {
+  max-width: 600px;
+}
+
+.services-participants__content p {
+  max-width: 520px;
+
+  margin-top: 24px;
+}
+
+.services-participants__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 1px solid var(--color-border);
+}
+
+.services-participants__item {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 72px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.services-participants__item span {
+  color: var(--color-primary);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.services-participants__item strong {
+  color: var(--color-text);
+
+  font-size: 0.86rem;
+}
+
+@media (max-width: 800px) {
+  .services-participants__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .services-participants__list {
+    grid-template-columns: 1fr;
+  }
+}

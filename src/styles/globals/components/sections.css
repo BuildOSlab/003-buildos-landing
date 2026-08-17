@@ -1,0 +1,31 @@
+.landing-section {
+  padding: var(--section-padding-y) 0;
+}
+
+.landing-section__intro {
+  max-width: 700px;
+  margin-bottom: 54px;
+}
+
+.landing-section__intro--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.landing-section__title {
+  margin-top: 14px;
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.landing-section__title span {
+  color: var(--color-primary);
+}
+
+.landing-section__description {
+  margin-top: 20px;
+  color: var(--color-text-soft);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}

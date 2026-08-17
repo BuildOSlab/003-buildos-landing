@@ -1,0 +1,95 @@
+/* =========================================================
+   HOW IT WORKS — PATHS
+========================================================= */
+
+.how-it-works-paths {
+  padding: clamp(80px, 9vw, 130px) 0;
+
+  background: var(--color-bg);
+}
+
+.how-it-works-paths__grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  margin-top: 55px;
+}
+
+.how-it-works-path {
+  padding: 34px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+
+  background: var(--color-surface);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.how-it-works-path__label {
+  color: var(--color-primary);
+
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.how-it-works-path h3 {
+  max-width: 500px;
+
+  margin-top: 16px;
+
+  color: var(--color-text);
+
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.how-it-works-path__steps {
+  margin-top: 30px;
+}
+
+.how-it-works-path__step {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 48px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.how-it-works-path__step > span {
+  color: var(--color-text-muted);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.how-it-works-path__step strong {
+  color: var(--color-text);
+
+  font-size: 0.82rem;
+}
+
+.how-it-works-path__step i {
+  margin-left: auto;
+
+  color: var(--color-primary);
+
+  font-style: normal;
+}
+
+@media (max-width: 760px) {
+  .how-it-works-paths__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-it-works-path {
+    padding: 26px;
+  }
+}

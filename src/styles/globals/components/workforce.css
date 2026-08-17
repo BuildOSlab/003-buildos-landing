@@ -1,0 +1,158 @@
+/* =========================================================
+   WORKFORCE
+========================================================= */
+
+.workforce-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+
+/* =========================================================
+   WORKER CARD
+========================================================= */
+
+.worker-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+
+  padding: 22px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   WORKER AVATAR
+========================================================= */
+
+.worker-card__avatar {
+  display: grid;
+  place-items: center;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 18px;
+
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   WORKER INFO
+========================================================= */
+
+.worker-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   VERIFIED
+========================================================= */
+
+.worker-card__verified {
+  color: var(--color-success);
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   WORKER NAME
+========================================================= */
+
+.worker-card__info h3 {
+  margin-top: 4px;
+  color: var(--color-text);
+  font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   WORKER DESCRIPTION
+========================================================= */
+
+.worker-card__info p {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.worker-card__rating {
+  align-self: start;
+
+  color: var(--color-text);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+
+.worker-card__rating span {
+  color:
+    var(--color-accent);
+}
+
+
+/* =========================================================
+   WORKER BUTTON
+========================================================= */
+
+.worker-card__button {
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  padding: 11px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius: 10px;
+
+  background:
+    var(--color-bg-soft);
+
+  color:
+    var(--color-primary);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+
+.worker-card__button:hover {
+  background:
+    var(--color-primary-soft);
+
+  border-color:
+    var(--color-primary);
+
+  color:
+    var(--color-primary-dark);
+}

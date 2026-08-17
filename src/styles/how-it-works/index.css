@@ -1,0 +1,55 @@
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+@import "./hero.css";
+@import "./flow.css";
+@import "./paths.css";
+@import "./diagram.css";
+@import "./cta.css";
+
+
+/* =========================================================
+   SHARED PAGE FOUNDATION
+========================================================= */
+
+.how-it-works-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.how-it-works-page .container {
+  width: min(100% - 40px, 1180px);
+  margin-inline: auto;
+}
+
+.how-it-works-page h1,
+.how-it-works-page h2,
+.how-it-works-page h3 {
+  color: var(--color-text);
+}
+
+.how-it-works-page p {
+  color: var(--color-text-soft);
+}
+
+.how-it-works-kicker {
+  display: inline-block;
+
+  color: var(--color-primary);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .how-it-works-page .container {
+    width: min(100% - 28px, 1180px);
+  }
+}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container, Logo } from "@/components/ui";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export function Footer() {
   return (
@@ -19,15 +20,15 @@ export function Footer() {
               <h3>Platform</h3>
               <Link href="#marketplace">Marketplace</Link>
               <Link href="#projects">Projects</Link>
-              <Link href="#how-it-works">How It Works</Link>
-              <Link href="#services">Services</Link>
+              <Link href="/how-it-works">How It Works</Link>
+              <Link href="/services">Services</Link>
             </div>
 
             <div>
               <h3>Company</h3>
-              <Link href="#trust">About BuildOS</Link>
-              <Link href="#projects">Our vision</Link>
-              <Link href="#how-it-works">How it works</Link>
+              <Link href="/about">About BuildOS</Link>
+              <Link href="/about">Our Vision</Link>
+              <Link href="/how-it-works">How It Works</Link>
             </div>
 
             <div>
@@ -39,13 +40,17 @@ export function Footer() {
         </div>
 
         <div className="landing-footer__bottom">
-          <span>© {new Date().getFullYear()} BuildOS. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} BuildOS. All rights reserved.
+          </span>
 
-          <div>
-            <Link href="/">Privacy</Link>
-            <Link href="/">Terms</Link>
-            <Link href="/">Security</Link>
+          <div className="landing-footer__links">
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="/security">Security</Link>
           </div>
+
+          <ThemeToggle />
         </div>
       </Container>
     </footer>

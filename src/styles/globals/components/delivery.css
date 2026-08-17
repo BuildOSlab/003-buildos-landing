@@ -1,0 +1,1434 @@
+/* =========================================================
+   DELIVERY SECTION
+========================================================= */
+
+.landing-delivery {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(56px, 6vw, 88px);
+  background: var(--color-dark);
+  color: var(--color-text-inverse);
+}
+
+.landing-delivery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgb(45 212 191 / 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgb(45 212 191 / 0.05),
+      transparent 28%
+    );
+}
+
+.delivery-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   SECTION INTRO
+========================================================= */
+
+.landing-delivery .landing-section__intro {
+  max-width: 680px;
+  margin-bottom: 34px;
+}
+
+.landing-delivery .landing-section__title {
+  color: var(--color-text-inverse);
+}
+
+.landing-delivery .landing-section__description {
+  max-width: 620px;
+  color: rgb(255 255 255 / 0.62);
+}
+
+
+/* =========================================================
+   DELIVERY TRACKER
+========================================================= */
+
+.delivery-tracker {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+
+  overflow: hidden;
+
+  border: 1px solid rgb(255 255 255 / 0.09);
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(15 23 42 / 0.94),
+      rgb(2 6 23 / 0.98)
+    );
+
+  box-shadow:
+    0 24px 60px rgb(0 0 0 / 0.25),
+    inset 0 1px 0 rgb(255 255 255 / 0.04);
+
+  backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   TRACKER HEADER
+========================================================= */
+
+.delivery-tracker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 64px;
+  padding: 14px 20px;
+
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+}
+
+.delivery-tracker__label {
+  display: block;
+
+  color: rgb(255 255 255 / 0.38);
+
+  font-size: 0.56rem;
+  font-weight: 800;
+
+  letter-spacing: 0.11em;
+}
+
+.delivery-tracker__header strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: rgb(255 255 255 / 0.9);
+
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   LIVE BADGE
+========================================================= */
+
+.delivery-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 5px 9px;
+
+  border: 1px solid rgb(45 212 191 / 0.18);
+  border-radius: 999px;
+
+  background: rgb(45 212 191 / 0.07);
+
+  color: #5eead4;
+
+  font-size: 0.56rem;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+.delivery-live__dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #2dd4bf;
+
+  box-shadow:
+    0 0 0 4px rgb(45 212 191 / 0.08);
+
+  animation:
+    delivery-live-pulse
+    2.6s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.delivery-map {
+  position: relative;
+
+  height: clamp(280px, 30vw, 350px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgb(45 212 191 / 0.065),
+      transparent 38%
+    ),
+    #0b1120;
+}
+
+
+/* =========================================================
+   MAP GRID
+========================================================= */
+
+.delivery-map__grid {
+  position: absolute;
+
+  inset: -20%;
+
+  opacity: 0.26;
+
+  transform:
+    rotate(-7deg)
+    scale(1.15);
+
+  background-image:
+    linear-gradient(
+      rgb(255 255 255 / 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgb(255 255 255 / 0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  animation:
+    delivery-grid-drift
+    30s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   MAP ATMOSPHERIC GLOW
+========================================================= */
+
+.delivery-map__glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgb(45 212 191 / 0.07),
+      transparent 68%
+    );
+
+  transform: translate(-50%, -50%);
+
+  filter: blur(10px);
+
+  animation:
+    delivery-map-breathe
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   ROUTE
+========================================================= */
+
+.delivery-route {
+  position: absolute;
+  inset: 0;
+}
+
+.delivery-route__svg {
+  position: absolute;
+
+  inset: 6% 5%;
+
+  width: 90%;
+  height: 88%;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   ROUTE SHADOW
+========================================================= */
+
+.delivery-route__shadow {
+  fill: none;
+
+  stroke: rgb(45 212 191 / 0.055);
+
+  stroke-width: 16;
+
+  stroke-linecap: round;
+
+  filter: blur(4px);
+}
+
+
+/* =========================================================
+   MAIN ROUTE
+========================================================= */
+
+.delivery-route__line {
+  fill: none;
+
+  stroke: var(--color-primary);
+
+  stroke-width: 4;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 10 16;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgb(45 212 191 / 0.45)
+    );
+
+  animation:
+    delivery-route-flow
+    2.8s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   MULTI-DELIVERY ROUTES
+========================================================= */
+
+.delivery-route__line--secondary {
+  opacity: 0.68;
+}
+
+.delivery-route__line--tertiary {
+  opacity: 0.54;
+}
+
+.delivery-route__line--four {
+  opacity: 0.42;
+}
+
+
+/* =========================================================
+   ROUTE HIGHLIGHT
+========================================================= */
+
+.delivery-route__highlight {
+  fill: none;
+
+  stroke: rgb(94 234 212 / 0.22);
+
+  stroke-width: 1;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 3 20;
+
+  animation:
+    delivery-route-highlight
+    5s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   DELIVERY TRUCK
+========================================================= */
+
+.delivery-truck {
+  overflow: visible;
+
+  color: var(--color-primary);
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgb(45 212 191 / 0.45)
+    )
+    drop-shadow(
+      0 8px 14px
+      rgb(0 0 0 / 0.28)
+    );
+}
+
+.delivery-truck--one {
+  opacity: 1;
+}
+
+.delivery-truck--two {
+  opacity: 0.9;
+}
+
+.delivery-truck--three {
+  opacity: 0.8;
+}
+
+.delivery-truck--four {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   TRUCK RADAR
+========================================================= */
+
+.delivery-truck__radar {
+  fill: none;
+
+  stroke: rgb(45 212 191 / 0.28);
+
+  stroke-width: 1.25;
+
+  animation:
+    delivery-radar
+    5.8s
+    ease-out
+    infinite;
+}
+
+
+/* =========================================================
+   MAP LOCATION LABELS
+   Compact annotations — NOT large cards
+========================================================= */
+
+.delivery-location {
+  position: absolute;
+
+  z-index: 4;
+
+  display: flex;
+  flex-direction: column;
+
+  width: max-content;
+  min-width: 0;
+  max-width: 118px;
+
+  padding: 7px 9px;
+
+  border: 1px solid rgb(255 255 255 / 0.075);
+  border-radius: 9px;
+
+  background:
+    rgb(15 23 42 / 0.72);
+
+  box-shadow:
+    0 8px 18px rgb(0 0 0 / 0.18);
+
+  backdrop-filter: blur(10px);
+
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
+.delivery-location::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -4px;
+  left: 14px;
+
+  width: 7px;
+  height: 7px;
+
+  border-right:
+    1px solid
+    rgb(255 255 255 / 0.075);
+
+  border-bottom:
+    1px solid
+    rgb(255 255 255 / 0.075);
+
+  background: #172033;
+
+  transform: rotate(45deg);
+}
+
+.delivery-location span {
+  color:
+    rgb(255 255 255 / 0.34);
+
+  font-size: 0.43rem;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+}
+
+.delivery-location strong {
+  margin-top: 3px;
+
+  color:
+    rgb(255 255 255 / 0.88);
+
+  font-size: 0.61rem;
+  font-weight: 650;
+
+  line-height: 1.2;
+}
+
+.delivery-location small {
+  margin-top: 3px;
+
+  color:
+    rgb(255 255 255 / 0.3);
+
+  font-size: 0.47rem;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   LOCATION POSITIONS
+========================================================= */
+
+.delivery-location--one {
+  top: 15%;
+  left: 6%;
+}
+
+.delivery-location--two {
+  right: 6%;
+  bottom: 15%;
+}
+
+.delivery-location--three {
+  right: 18%;
+  top: 66%;
+}
+
+.delivery-location--four {
+  left: 30%;
+  top: 8%;
+}
+
+
+/* =========================================================
+   LOCATION MARKERS
+========================================================= */
+
+.delivery-marker {
+  position: absolute;
+
+  z-index: 3;
+
+  display: grid;
+  place-items: center;
+
+  width: 12px;
+  height: 12px;
+
+  border: 2px solid #0f172a;
+  border-radius: 50%;
+
+  background: var(--color-primary);
+
+  box-shadow:
+    0 0 0 5px
+    rgb(45 212 191 / 0.07);
+
+  animation:
+    delivery-marker-pulse
+    3.5s
+    ease-in-out
+    infinite;
+}
+
+.delivery-marker span {
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: var(--color-text-inverse);
+}
+
+.delivery-marker--origin {
+  left: 8.7%;
+  top: 63%;
+}
+
+.delivery-marker--destination {
+  right: 9%;
+  top: 24%;
+}
+
+.delivery-marker--three {
+  right: 17%;
+  top: 69%;
+}
+
+.delivery-marker--four {
+  left: 31%;
+  top: 12%;
+}
+
+
+/* =========================================================
+   STATUS CARD
+========================================================= */
+
+.delivery-map__status {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  z-index: 5;
+
+  min-width: 150px;
+
+  padding: 11px;
+
+  border: 1px solid rgb(255 255 255 / 0.075);
+  border-radius: 11px;
+
+  background: rgb(15 23 42 / 0.78);
+
+  box-shadow:
+    0 12px 24px rgb(0 0 0 / 0.2);
+
+  backdrop-filter: blur(14px);
+}
+
+.delivery-map__status-label {
+  color: rgb(255 255 255 / 0.34);
+
+  font-size: 0.49rem;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.delivery-map__status-value {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #5eead4;
+
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.delivery-map__status-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-top: 8px;
+  padding-top: 7px;
+
+  border-top:
+    1px solid
+    rgb(255 255 255 / 0.055);
+}
+
+.delivery-map__status-line span {
+  color: rgb(255 255 255 / 0.34);
+
+  font-size: 0.52rem;
+}
+
+.delivery-map__status-line strong {
+  color: var(--color-text-inverse);
+
+  font-size: 0.66rem;
+}
+
+
+/* =========================================================
+   MAP LIVE INDICATOR
+========================================================= */
+
+.delivery-map__live-indicator {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 8px;
+
+  border: 1px solid rgb(45 212 191 / 0.14);
+  border-radius: 999px;
+
+  background: rgb(45 212 191 / 0.055);
+
+  color: rgb(255 255 255 / 0.52);
+
+  font-size: 0.52rem;
+
+  backdrop-filter: blur(10px);
+}
+
+.delivery-map__live-dot {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #2dd4bf;
+
+  box-shadow:
+    0 0 0 4px
+    rgb(45 212 191 / 0.07);
+
+  animation:
+    delivery-live-pulse
+    2.6s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   TRACKER FOOTER
+========================================================= */
+
+.delivery-tracker__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  min-height: 54px;
+  padding: 11px 20px;
+
+  border-top:
+    1px solid
+    rgb(255 255 255 / 0.06);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.delivery-tracker__progress {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex: 1;
+}
+
+.delivery-tracker__progress-label {
+  flex: 0 0 auto;
+
+  color:
+    rgb(255 255 255 / 0.34);
+
+  font-size: 0.58rem;
+}
+
+.delivery-tracker__progress-track {
+  position: relative;
+
+  overflow: hidden;
+
+  height: 3px;
+
+  max-width: 230px;
+
+  flex: 1;
+
+  border-radius: 999px;
+
+  background:
+    rgb(255 255 255 / 0.065);
+}
+
+.delivery-tracker__progress-track span {
+  position: absolute;
+
+  inset: 0 auto 0 0;
+
+  width: 62%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-primary),
+      #5eead4
+    );
+
+  box-shadow:
+    0 0 9px
+    rgb(45 212 191 / 0.32);
+
+  animation:
+    delivery-progress
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   CONNECTION STATUS
+========================================================= */
+
+.delivery-tracker__connected {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #5eead4;
+
+  font-size: 0.58rem;
+}
+
+.delivery-tracker__connected span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #2dd4bf;
+
+  animation:
+    delivery-live-pulse
+    2.6s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes delivery-route-flow {
+  to {
+    stroke-dashoffset: -26px;
+  }
+}
+
+@keyframes delivery-route-highlight {
+  to {
+    stroke-dashoffset: -46px;
+  }
+}
+
+@keyframes delivery-radar {
+  0% {
+    opacity: 0.6;
+    r: 16;
+  }
+
+  100% {
+    opacity: 0;
+    r: 38;
+  }
+}
+
+@keyframes delivery-marker-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px
+      rgb(45 212 191 / 0.06);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 9px
+      rgb(45 212 191 / 0.015);
+  }
+}
+
+@keyframes delivery-live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.72);
+  }
+}
+
+@keyframes delivery-grid-drift {
+  from {
+    transform:
+      rotate(-7deg)
+      scale(1.15)
+      translate(0, 0);
+  }
+
+  to {
+    transform:
+      rotate(-7deg)
+      scale(1.15)
+      translate(48px, 48px);
+  }
+}
+
+@keyframes delivery-map-breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.94);
+  }
+
+  50% {
+    opacity: 0.85;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.04);
+  }
+}
+
+@keyframes delivery-progress {
+  0% {
+    width: 42%;
+  }
+
+  50% {
+    width: 70%;
+  }
+
+  100% {
+    width: 62%;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .delivery-map__grid,
+  .delivery-map__glow,
+  .delivery-route__line,
+  .delivery-route__highlight,
+  .delivery-truck__radar,
+  .delivery-marker,
+  .delivery-live__dot,
+  .delivery-map__live-dot,
+  .delivery-tracker__connected span,
+  .delivery-tracker__progress-track span {
+    animation: none;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+  .landing-delivery {
+    padding-block: 52px;
+  }
+
+  .landing-delivery .landing-section__intro {
+    margin-bottom: 26px;
+  }
+
+  .delivery-tracker {
+    border-radius: 18px;
+  }
+
+  .delivery-map {
+    height: 270px;
+  }
+
+  .delivery-tracker__header {
+    min-height: 58px;
+    padding: 12px 16px;
+  }
+
+  .delivery-tracker__footer {
+    min-height: 50px;
+    padding: 10px 16px;
+  }
+
+  /* Smaller map annotations */
+  .delivery-location {
+    max-width: 105px;
+    padding: 6px 8px;
+
+    transform: scale(0.82);
+  }
+
+  .delivery-location--one {
+    top: 12%;
+    left: 3%;
+  }
+
+  .delivery-location--two {
+    right: 3%;
+    bottom: 12%;
+  }
+
+  .delivery-location--three {
+    right: 8%;
+    top: 67%;
+  }
+
+  .delivery-location--four {
+    left: 24%;
+    top: 7%;
+  }
+
+  .delivery-marker--origin {
+    left: 7.8%;
+  }
+
+  .delivery-marker--destination {
+    right: 8%;
+  }
+
+  .delivery-marker--three {
+    right: 7%;
+  }
+
+  .delivery-marker--four {
+    left: 25%;
+  }
+
+  .delivery-map__status {
+    right: 13px;
+    bottom: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .landing-delivery {
+    padding-block: 44px;
+  }
+
+  .landing-delivery .landing-section__intro {
+    margin-bottom: 22px;
+  }
+
+  .landing-delivery .landing-section__description {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .delivery-tracker {
+    border-radius: 16px;
+  }
+
+  .delivery-tracker__header {
+    min-height: 54px;
+    padding: 11px 13px;
+  }
+
+  .delivery-tracker__label {
+    font-size: 0.5rem;
+  }
+
+  .delivery-tracker__header strong {
+    font-size: 0.74rem;
+  }
+
+  .delivery-live {
+    padding: 4px 7px;
+    font-size: 0.49rem;
+  }
+
+  .delivery-map {
+    height: 225px;
+  }
+
+  .delivery-map__grid {
+    background-size: 36px 36px;
+  }
+
+  .delivery-map__glow {
+    width: 190px;
+    height: 190px;
+  }
+
+  /* Very compact location annotations */
+  .delivery-location {
+    max-width: 82px;
+    padding: 5px 7px;
+
+    border-radius: 8px;
+
+    transform: scale(0.72);
+  }
+
+  .delivery-location span {
+    font-size: 0.4rem;
+  }
+
+  .delivery-location strong {
+    margin-top: 2px;
+
+    font-size: 0.53rem;
+  }
+
+  .delivery-location small {
+    margin-top: 2px;
+
+    font-size: 0.42rem;
+  }
+
+  .delivery-location--one {
+    top: 10%;
+    left: 1%;
+  }
+
+  .delivery-location--two {
+    right: 1%;
+    bottom: 10%;
+  }
+
+  .delivery-location--three {
+    right: 5%;
+    top: 66%;
+  }
+
+  .delivery-location--four {
+    left: 20%;
+    top: 5%;
+  }
+
+  .delivery-marker {
+    width: 10px;
+    height: 10px;
+
+    border-width: 2px;
+  }
+
+  .delivery-marker span {
+    width: 2px;
+    height: 2px;
+  }
+
+  .delivery-map__status {
+    right: 8px;
+    bottom: 8px;
+
+    min-width: 112px;
+
+    padding: 8px;
+
+    border-radius: 9px;
+  }
+
+  .delivery-map__status-label {
+    font-size: 0.44rem;
+  }
+
+  .delivery-map__status-value {
+    font-size: 0.64rem;
+  }
+
+  .delivery-map__status-line {
+    gap: 8px;
+
+    margin-top: 5px;
+    padding-top: 5px;
+  }
+
+  .delivery-map__status-line span {
+    font-size: 0.44rem;
+  }
+
+  .delivery-map__status-line strong {
+    font-size: 0.56rem;
+  }
+
+  .delivery-map__live-indicator {
+    top: 8px;
+    right: 8px;
+
+    padding: 4px 7px;
+  }
+
+  .delivery-map__live-indicator span:last-child {
+    display: none;
+  }
+
+  .delivery-tracker__footer {
+    gap: 8px;
+    padding: 9px 12px;
+  }
+
+  .delivery-tracker__progress {
+    gap: 7px;
+  }
+
+  .delivery-tracker__progress-label {
+    font-size: 0.5rem;
+  }
+
+  .delivery-tracker__connected {
+    font-size: 0.5rem;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+  .landing-delivery {
+    padding-block: 38px;
+  }
+
+  .delivery-map {
+    height: 205px;
+  }
+
+  .delivery-location {
+    max-width: 72px;
+    padding: 4px 6px;
+
+    transform: scale(0.64);
+  }
+
+  .delivery-location strong {
+    font-size: 0.49rem;
+  }
+
+  .delivery-location small {
+    display: none;
+  }
+
+  .delivery-map__status {
+    min-width: 100px;
+    padding: 7px;
+  }
+
+  .delivery-map__status-line span {
+    display: none;
+  }
+
+  .delivery-map__status-line {
+    justify-content: flex-start;
+  }
+
+  .delivery-tracker__progress-label {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   DELIVERY INTRO — ONLY
+   All other delivery styles remain unchanged.
+========================================================= */
+
+.delivery-intro {
+  width: min(100%, 620px);
+  margin-inline: auto;
+  margin-bottom: 34px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.delivery-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-bottom: 12px;
+
+  color: var(--color-primary);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.delivery-eyebrow::before,
+.delivery-eyebrow::after {
+  content: "";
+
+  width: 16px;
+  height: 1px;
+
+  background: rgb(45 212 191 / 0.4);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.delivery-intro__title {
+  width: min(100%, 560px);
+  margin-inline: auto;
+
+  color: var(--color-text-inverse);
+
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.delivery-intro__title span {
+  color: var(--color-primary);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.delivery-intro__description {
+  width: min(100%, 520px);
+  margin: 14px auto 0;
+
+  color: rgb(255 255 255 / 0.56);
+
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+  .delivery-intro {
+    width: min(100%, 500px);
+    margin-bottom: 28px;
+  }
+
+  .delivery-intro__title {
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
+  }
+
+  .delivery-intro__description {
+    width: min(100%, 440px);
+    font-size: 0.8rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .delivery-intro {
+    width: min(100%, 340px);
+    margin-bottom: 22px;
+  }
+
+  .delivery-eyebrow {
+    gap: 6px;
+
+    margin-bottom: 10px;
+
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+  }
+
+  .delivery-eyebrow::before,
+  .delivery-eyebrow::after {
+    width: 11px;
+  }
+
+  .delivery-intro__title {
+    width: min(100%, 320px);
+
+    font-size: clamp(1.65rem, 8vw, 2rem);
+    line-height: 1.08;
+  }
+
+  .delivery-intro__description {
+    width: min(100%, 315px);
+
+    margin-top: 11px;
+
+    font-size: 0.74rem;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media (max-width: 360px) {
+  .delivery-intro {
+    width: min(100%, 300px);
+    margin-bottom: 18px;
+  }
+
+  .delivery-intro__title {
+    font-size: 1.55rem;
+  }
+
+  .delivery-intro__description {
+    font-size: 0.7rem;
+  }
+}

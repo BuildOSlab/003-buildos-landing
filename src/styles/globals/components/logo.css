@@ -1,0 +1,32 @@
+/* =========================================================
+   LOGO
+========================================================= */
+
+.ui-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.ui-logo__mark {
+  width: 38px;
+  height: 38px;
+  color: var(--color-primary);
+}
+
+.ui-logo__wordmark {
+  font-size: 1.2rem;
+}
+
+.ui-logo--sm .ui-logo__mark {
+  width: 30px;
+  height: 30px;
+}
+
+.ui-logo--lg .ui-logo__mark {
+  width: 46px;
+  height: 46px;
+}

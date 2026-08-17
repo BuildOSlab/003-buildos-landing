@@ -1,0 +1,209 @@
+/* =========================================================
+   SERVICES — HOW IT WORKS
+========================================================= */
+
+.services-flow {
+  padding: clamp(80px, 9vw, 130px) 0;
+
+  background: var(--color-bg);
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.services-flow__header {
+  max-width: 760px;
+
+  margin-bottom: 55px;
+}
+
+.services-flow__header h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+}
+
+.services-flow__header h2 span {
+  display: block;
+
+  color: var(--color-primary);
+}
+
+.services-flow__header p {
+  max-width: 650px;
+
+  margin-top: 20px;
+
+  color: var(--color-text-soft);
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.services-flow__timeline {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.services-flow__step {
+  position: relative;
+
+  min-height: 250px;
+
+  padding: 28px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+
+  background: var(--color-surface);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.services-flow__step:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--color-border-strong);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.services-flow__number {
+  display: inline-grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: var(--color-primary-soft);
+
+  color: var(--color-primary);
+
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   STEP TITLE
+========================================================= */
+
+.services-flow__step strong {
+  display: block;
+
+  margin-top: 34px;
+
+  color: var(--color-text);
+
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   STEP DESCRIPTION
+========================================================= */
+
+.services-flow__step p {
+  margin-top: 12px;
+
+  color: var(--color-text-soft);
+
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.services-flow__step:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 47px;
+  right: -17px;
+
+  width: 18px;
+
+  border-top: 1px solid var(--color-border-strong);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .services-flow__timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-flow__step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .services-flow {
+    padding: 70px 0;
+  }
+
+  .services-flow__header {
+    margin-bottom: 35px;
+  }
+
+  .services-flow__timeline {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .services-flow__step {
+    min-height: auto;
+
+    padding: 24px;
+  }
+
+  .services-flow__step strong {
+    margin-top: 24px;
+  }
+}

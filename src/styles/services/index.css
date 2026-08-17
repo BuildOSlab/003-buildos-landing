@@ -1,0 +1,140 @@
+@import "./hero.css";
+@import "./grid.css";
+@import "./flow.css";
+@import "./participants.css";
+@import "./trust.css";
+@import "./cta.css";
+
+/* =========================================================
+   SERVICES — SHARED
+========================================================= */
+
+.services-page {
+  width: 100%;
+  overflow-x: hidden;
+
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.services-page .container {
+  width: min(100% - 40px, 1180px);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   SECTION FOUNDATION
+========================================================= */
+
+.services-page > section {
+  position: relative;
+
+  background: var(--color-bg);
+
+  color: var(--color-text);
+}
+
+/*
+  Light visual separation between sections.
+  No hardcoded colors.
+*/
+.services-page > section:not(:first-child) {
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -8px 24px rgb(15 23 42 / 0.035);
+}
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.services-kicker {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: var(--color-primary);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+.services-page h1,
+.services-page h2,
+.services-page h3 {
+  color: var(--color-text);
+}
+
+.services-page h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+}
+
+.services-page h2 span {
+  display: block;
+
+  color: var(--color-primary);
+}
+
+/* =========================================================
+   BODY TEXT
+========================================================= */
+
+.services-page p {
+  color: var(--color-text-soft);
+  line-height: 1.75;
+}
+
+.services-section__intro p {
+  max-width: 650px;
+
+  margin-top: 22px;
+}
+
+/* =========================================================
+   LIGHT CARD FOUNDATION
+========================================================= */
+
+.services-page .services-card {
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-sm);
+
+  color: var(--color-text);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .services-page .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .services-section {
+    padding-block: 64px;
+  }
+
+  .services-page h2 {
+    font-size: clamp(1.9rem, 8vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .services-section__intro p {
+    margin-top: 18px;
+  }
+}

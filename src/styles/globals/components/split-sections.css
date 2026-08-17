@@ -1,0 +1,61 @@
+/* =========================================================
+   SPLIT SECTIONS
+========================================================= */
+
+.split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 90px;
+}
+
+.split-section--reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.split-section__content {
+  max-width: 600px;
+}
+
+.landing-marketplace {
+  background: var(--color-bg);
+}
+
+.feature-list {
+  margin-top: 34px;
+}
+
+.feature-list__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.feature-list__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+.feature-list__item h3 {
+  font-size: 0.95rem;
+}
+
+.feature-list__item p {
+  margin-top: 3px;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.feature-list__arrow {
+  color: var(--color-primary);
+  font-weight: 800;
+}

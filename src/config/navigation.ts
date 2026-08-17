@@ -5,16 +5,20 @@ export interface NavigationItem {
 
 export const mainNavigation: NavigationItem[] = [
   {
+    label: "About",
+    href: "/about",
+  },
+  {
     label: "Marketplace",
     href: "#marketplace",
   },
   {
     label: "How It Works",
-    href: "#how-it-works",
+    href: "/how-it-works",
   },
   {
     label: "Services",
-    href: "#services",
+    href: "/services",
   },
   {
     label: "Projects",

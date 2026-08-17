@@ -1,3 +1,11 @@
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-text);
@@ -14,6 +22,45 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid rgb(15 118 110 / 0.25);
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
+}
+
+/* Theme-aware defaults */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }

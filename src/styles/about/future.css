@@ -1,0 +1,22 @@
+.about-future {
+  background: var(--color-surface);
+}
+
+.about-future__grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 100px;
+}
+
+.about-future__grid > div:last-child {
+  padding-top: 10px;
+}
+
+.about-future__grid p {
+  color: var(--color-text-soft);
+  line-height: 1.8;
+}
+
+.about-future__grid p + p {
+  margin-top: 20px;
+}

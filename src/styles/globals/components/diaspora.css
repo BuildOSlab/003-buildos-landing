@@ -1,0 +1,246 @@
+/* =========================================================
+   DIASPORA
+========================================================= */
+
+.diaspora-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+
+  min-height: 480px;
+
+  overflow: hidden;
+
+  padding: 70px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius: 32px;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgb(45 212 191 / 0.15),
+      transparent 30%
+    ),
+    var(--color-surface);
+
+  color: var(--color-text-inverse);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.diaspora-card__content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 600px;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.diaspora-card .landing-kicker {
+  color: var(--color-primary);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.diaspora-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+
+  min-height: 480px;
+
+  overflow: hidden;
+
+  padding: 70px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 32px;
+
+  background: var(--color-dark);
+  color: var(--color-text-inverse);
+}
+
+
+/* =========================================================
+   HEADING ACCENT
+========================================================= */
+
+.diaspora-card h2 span {
+  display: block;
+
+  color: var(--color-primary);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.diaspora-card p {
+  max-width: 560px;
+
+  margin-top: 20px;
+
+  color: var(--color-text-soft);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.diaspora-card .landing-button {
+  margin-top: 30px;
+}
+
+
+/* =========================================================
+   GLOBE
+========================================================= */
+
+.diaspora-globe {
+  position: relative;
+
+  width: 330px;
+  height: 330px;
+
+  margin-inline: auto;
+
+  border:
+    1px solid
+    rgb(45 212 191 / 0.25);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgb(15 118 110 / 0.3),
+      transparent 65%
+    );
+}
+
+
+/* =========================================================
+   GLOBE RINGS
+========================================================= */
+
+.diaspora-globe__ring {
+  position: absolute;
+
+  inset: 15%;
+
+  border:
+    1px solid
+    rgb(45 212 191 / 0.25);
+
+  border-radius: 50%;
+}
+
+
+.diaspora-globe__ring--two {
+  inset: 30%;
+}
+
+
+/* =========================================================
+   GLOBE CENTER
+========================================================= */
+
+.diaspora-globe__center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: grid;
+  place-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--color-text) 20%,
+      transparent
+    );
+
+  border-radius: 50%;
+
+  background:
+    var(--color-primary);
+
+  color:
+    var(--color-text-inverse);
+
+  box-shadow:
+    0 0 40px
+    rgb(45 212 191 / 0.35);
+
+  transform:
+    translate(-50%, -50%);
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   GLOBE POINTS
+========================================================= */
+
+.diaspora-point {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-primary);
+
+  box-shadow:
+    0 0 0 8px
+    rgb(45 212 191 / 0.1);
+}
+
+
+.diaspora-point--one {
+  top: 18%;
+  right: 18%;
+}
+
+
+.diaspora-point--two {
+  bottom: 23%;
+  left: 14%;
+}
+
+
+.diaspora-point--three {
+  top: 35%;
+  left: 6%;
+}

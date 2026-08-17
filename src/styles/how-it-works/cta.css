@@ -1,0 +1,65 @@
+/* =========================================================
+   HOW IT WORKS — CTA
+========================================================= */
+
+.how-it-works-cta {
+  padding: clamp(90px, 11vw, 150px) 0;
+
+  background: var(--color-bg);
+}
+
+.how-it-works-cta__content {
+  max-width: 850px;
+
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.how-it-works-cta__content h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.how-it-works-cta__content h2 span {
+  display: block;
+
+  color: var(--color-primary);
+}
+
+.how-it-works-cta__content p {
+  max-width: 650px;
+
+  margin: 24px auto 0;
+
+  color: var(--color-text-soft);
+
+  line-height: 1.75;
+}
+
+.how-it-works-cta__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.how-it-works-cta__actions a {
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .how-it-works-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,132 @@
+/* =========================================================
+   CTA
+========================================================= */
+
+.landing-cta {
+  padding: 40px 0 100px;
+
+  background:
+    var(--color-bg);
+}
+
+
+/* =========================================================
+   CTA INNER
+========================================================= */
+
+.landing-cta__inner {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 64px;
+
+  border-radius: 30px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgb(45 212 191 / 0.16),
+      transparent 30%
+    ),
+    var(--color-primary);
+
+  color:
+    var(--color-text-inverse);
+}
+
+
+/* =========================================================
+   CTA KICKER
+========================================================= */
+
+.landing-cta .landing-kicker {
+  color:
+    var(--color-primary-soft);
+}
+
+
+/* =========================================================
+   CTA TITLE
+========================================================= */
+
+.landing-cta h2 {
+  max-width: 700px;
+
+  margin-top: 12px;
+
+  color:
+    var(--color-text-inverse);
+
+  font-size:
+    clamp(2.2rem, 4vw, 3.5rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   CTA TITLE ACCENT
+========================================================= */
+
+.landing-cta h2 span {
+  color:
+    var(--color-primary-soft);
+}
+
+
+/* =========================================================
+   CTA DESCRIPTION
+========================================================= */
+
+.landing-cta p {
+  max-width: 580px;
+
+  margin-top: 18px;
+
+  color:
+    color-mix(
+      in srgb,
+      var(--color-text-inverse) 70%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CTA ACTIONS
+========================================================= */
+
+.landing-cta__actions {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CTA SECONDARY
+========================================================= */
+
+.landing-cta__secondary {
+  color:
+    color-mix(
+      in srgb,
+      var(--color-text-inverse) 72%,
+      transparent
+    );
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+}

@@ -1,0 +1,71 @@
+/* =========================================================
+   SERVICES — CTA
+========================================================= */
+
+.services-cta {
+  padding: clamp(90px, 11vw, 150px) 0;
+
+  background: var(--color-bg);
+}
+
+.services-cta__content {
+  max-width: 900px;
+
+  margin-inline: auto;
+
+  padding: clamp(36px, 5vw, 60px);
+
+  border: 1px solid var(--color-border);
+  border-radius: 32px;
+
+  background: var(--color-surface);
+
+  box-shadow: var(--shadow-md);
+
+  text-align: center;
+}
+
+.services-cta__content h2 {
+  color: var(--color-text);
+
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+}
+
+.services-cta__content h2 span {
+  color: var(--color-primary);
+}
+
+.services-cta__content p {
+  max-width: 650px;
+
+  margin: 24px auto 0;
+
+  color: var(--color-text-soft);
+}
+
+.services-cta__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.services-cta__actions .landing-button {
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .services-cta__content {
+    border-radius: 24px;
+
+    padding: 34px 22px;
+  }
+
+  .services-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

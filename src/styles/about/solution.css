@@ -1,0 +1,268 @@
+/* =========================================================
+   ABOUT — SOLUTION V2
+   Isolated namespace to prevent style conflicts
+========================================================= */
+
+.about-solution-v2 {
+  width: 100%;
+  padding-block: clamp(80px, 9vw, 130px);
+  background: var(--color-bg);
+}
+
+.about-solution-v2 > .container {
+  width: min(100% - 40px, 1180px);
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.about-solution-v2__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.75fr);
+  align-items: center;
+
+  gap: clamp(40px, 6vw, 80px);
+
+  padding: clamp(42px, 6vw, 80px);
+
+  border: 1px solid var(--color-border);
+  border-radius: 32px;
+
+  background: var(--color-dark);
+
+  color: var(--color-text-inverse);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.about-solution-v2__content {
+  width: 100%;
+  max-width: 650px;
+}
+
+.about-solution-v2__kicker {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: var(--color-primary);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.about-solution-v2__content h2 {
+  margin: 0;
+
+  color: var(--color-text-inverse);
+
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.about-solution-v2__content h2 span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--color-primary);
+}
+
+.about-solution-v2__content p {
+  max-width: 590px;
+
+  margin: 22px 0 0;
+
+  color: var(--color-text-inverse);
+
+  font-size: 0.98rem;
+  line-height: 1.75;
+
+  opacity: 0.78;
+}
+
+
+/* =========================================================
+   LAYERS
+========================================================= */
+
+.about-solution-v2__layers {
+  display: grid;
+  gap: 12px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   LAYER CARD
+========================================================= */
+
+.about-solution-v2__layer {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: start;
+
+  gap: 16px;
+
+  padding: 18px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 18px;
+
+  background: var(--color-dark-soft);
+
+  color: var(--color-text-inverse);
+
+  transition:
+    border-color var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard),
+    background-color var(--duration-normal) var(--ease-standard);
+}
+
+.about-solution-v2__layer:hover {
+  border-color: var(--color-primary);
+
+  background: var(--color-primary-dark);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.about-solution-v2__layer > span {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 50%;
+
+  background: var(--color-primary);
+
+  color: var(--color-text-inverse);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   LAYER CONTENT
+========================================================= */
+
+.about-solution-v2__layer strong {
+  display: block;
+
+  color: var(--color-text-inverse);
+
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.about-solution-v2__layer p {
+  margin: 5px 0 0;
+
+  color: var(--color-text-inverse);
+
+  font-size: 0.78rem;
+  line-height: 1.55;
+
+  opacity: 0.68;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .about-solution-v2__card {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+  }
+
+  .about-solution-v2__content {
+    max-width: 720px;
+  }
+
+  .about-solution-v2__layers {
+    max-width: 720px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .about-solution-v2 {
+    padding-block: 64px;
+  }
+
+  .about-solution-v2 > .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .about-solution-v2__card {
+    gap: 32px;
+
+    padding: 32px 22px;
+
+    border-radius: 24px;
+  }
+
+  .about-solution-v2__content h2 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    line-height: 1.08;
+  }
+
+  .about-solution-v2__content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .about-solution-v2__layer {
+    grid-template-columns: 36px minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding: 15px;
+  }
+
+  .about-solution-v2__layer > span {
+    width: 30px;
+    height: 30px;
+
+    font-size: 0.58rem;
+  }
+
+  .about-solution-v2__layer strong {
+    font-size: 0.88rem;
+  }
+
+  .about-solution-v2__layer p {
+    font-size: 0.74rem;
+  }
+}

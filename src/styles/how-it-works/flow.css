@@ -1,0 +1,91 @@
+/* =========================================================
+   HOW IT WORKS — FLOW
+========================================================= */
+
+.how-it-works-flow {
+  padding: clamp(80px, 9vw, 130px) 0;
+
+  background: var(--color-bg-soft);
+}
+
+.how-it-works-flow__steps {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-top: 55px;
+}
+
+.how-it-works-step {
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+
+  gap: 22px;
+
+  padding: 30px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+
+  background: var(--color-surface);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.how-it-works-step__number {
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: var(--color-primary-soft);
+
+  color: var(--color-primary);
+
+  font-size: 0.75rem;
+  font-weight: 850;
+}
+
+.how-it-works-step__content h3 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 1.25rem;
+}
+
+.how-it-works-step__content p {
+  margin-top: 10px;
+
+  color: var(--color-text-soft);
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.how-it-works-step__content span {
+  display: block;
+
+  margin-top: 16px;
+
+  color: var(--color-primary);
+
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+@media (max-width: 700px) {
+  .how-it-works-flow__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .how-it-works-step {
+    padding: 24px;
+  }
+}

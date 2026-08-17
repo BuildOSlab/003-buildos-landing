@@ -70,8 +70,12 @@
   top: 0;
   z-index: 100;
   height: var(--header-height);
-  border-bottom: 1px solid rgb(226 232 240 / 0.8);
-  background: rgb(248 250 252 / 0.88);
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(
+    in srgb,
+    var(--color-bg) 88%,
+    transparent
+  );
   backdrop-filter: blur(18px);
 }
 
@@ -162,8 +166,16 @@
   overflow: hidden;
   padding: 90px 0 110px;
   background:
-    radial-gradient(circle at 80% 15%, rgb(204 251 241 / 0.8), transparent 28%),
-    radial-gradient(circle at 15% 70%, rgb(254 243 199 / 0.45), transparent 25%),
+    radial-gradient(
+      circle at 80% 15%,
+      rgb(204 251 241 / 0.8),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 70%,
+      rgb(254 243 199 / 0.45),
+      transparent 25%
+    ),
     var(--color-bg);
 }
 
@@ -173,10 +185,21 @@
   pointer-events: none;
   opacity: 0.45;
   background-image:
-    linear-gradient(rgb(15 118 110 / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(15 118 110 / 0.04) 1px, transparent 1px);
+    linear-gradient(
+      rgb(15 118 110 / 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgb(15 118 110 / 0.04) 1px,
+      transparent 1px
+    );
   background-size: 50px 50px;
-  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 85%
+  );
 }
 
 .landing-hero__grid {
@@ -208,7 +231,7 @@
   padding: 8px 13px;
   border: 1px solid rgb(15 118 110 / 0.15);
   border-radius: var(--radius-full);
-  background: rgb(255 255 255 / 0.75);
+  background: var(--color-surface);
 }
 
 .landing-eyebrow__dot {
@@ -285,7 +308,7 @@
 
 .landing-button--secondary {
   border: 1px solid var(--color-border);
-  background: white;
+  background: var(--color-surface);
   color: var(--color-text);
 }
 
@@ -337,7 +360,9 @@
   font-size: 0.78rem;
 }
 
-/* HERO DASHBOARD */
+/* =========================================================
+   HERO DASHBOARD
+========================================================= */
 
 .landing-hero__visual {
   position: relative;
@@ -350,9 +375,13 @@
 .hero-dashboard {
   width: min(100%, 520px);
   padding: 26px;
-  border: 1px solid rgb(255 255 255 / 0.8);
+  border: 1px solid var(--color-border);
   border-radius: 28px;
-  background: rgb(255 255 255 / 0.88);
+  background: color-mix(
+    in srgb,
+    var(--color-surface) 88%,
+    transparent
+  );
   box-shadow: var(--shadow-xl);
   backdrop-filter: blur(20px);
   transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
@@ -421,7 +450,11 @@
   width: 68%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--color-primary), #2dd4bf);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    #2dd4bf
+  );
 }
 
 .hero-dashboard__cards {
@@ -432,8 +465,9 @@
 
 .hero-mini-card {
   padding: 15px;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: var(--color-bg);
+  background: var(--color-bg-soft);
 }
 
 .hero-mini-card span,
@@ -509,7 +543,7 @@
   padding: 13px 15px;
   border: 1px solid var(--color-border);
   border-radius: 14px;
-  background: rgb(255 255 255 / 0.94);
+  background: var(--color-surface);
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(10px);
 }
@@ -590,7 +624,7 @@
 ========================================================= */
 
 .landing-benefits {
-  background: white;
+  background: var(--color-bg);
 }
 
 .benefits-grid {
@@ -605,7 +639,7 @@
   padding: 30px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  background: white;
+  background: var(--color-surface);
   transition:
     transform var(--duration-normal) var(--ease-standard),
     box-shadow var(--duration-normal) var(--ease-standard);
@@ -705,7 +739,9 @@
   font-weight: 800;
 }
 
-/* MARKETPLACE */
+/* =========================================================
+   MARKETPLACE
+========================================================= */
 
 .marketplace-visual {
   display: flex;
@@ -717,7 +753,7 @@
   padding: 22px;
   border: 1px solid var(--color-border);
   border-radius: 24px;
-  background: white;
+  background: var(--color-surface);
   box-shadow: var(--shadow-lg);
 }
 
@@ -747,7 +783,7 @@
 .marketplace-panel__filter {
   padding: 7px 11px;
   border-radius: var(--radius-full);
-  background: var(--color-bg);
+  background: var(--color-bg-soft);
   color: var(--color-text-soft);
   font-size: 0.7rem;
   font-weight: 700;
@@ -761,6 +797,7 @@
   padding: 13px 15px;
   border: 1px solid var(--color-border);
   border-radius: 12px;
+  background: var(--color-bg-soft);
   color: var(--color-text-muted);
   font-size: 0.78rem;
 }
@@ -821,7 +858,7 @@
 ========================================================= */
 
 .landing-how {
-  background: white;
+  background: var(--color-bg);
 }
 
 .steps-grid {
@@ -834,7 +871,7 @@
   padding: 26px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  background: var(--color-bg);
+  background: var(--color-surface);
 }
 
 .step-card__top {
@@ -904,8 +941,15 @@
   inset: 0;
   opacity: 0.5;
   background-image:
-    linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    linear-gradient(
+      rgb(255 255 255 / 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgb(255 255 255 / 0.04) 1px,
+      transparent 1px
+    );
   background-size: 42px 42px;
 }
 
@@ -1023,7 +1067,7 @@
   padding: 22px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  background: white;
+  background: var(--color-surface);
 }
 
 .worker-card__avatar {
@@ -1073,7 +1117,7 @@
   width: 100%;
   padding: 11px;
   border-radius: 10px;
-  background: var(--color-bg);
+  background: var(--color-bg-soft);
   color: var(--color-primary);
   font-size: 0.72rem;
   font-weight: 800;
@@ -1085,7 +1129,7 @@
 ========================================================= */
 
 .landing-projects {
-  background: white;
+  background: var(--color-bg);
 }
 
 .project-highlights {
@@ -1115,7 +1159,7 @@
   padding: 24px;
   border: 1px solid var(--color-border);
   border-radius: 26px;
-  background: var(--color-bg);
+  background: var(--color-surface);
   box-shadow: var(--shadow-md);
 }
 
@@ -1161,7 +1205,7 @@
 .project-dashboard__stats div {
   padding: 13px;
   border-radius: 12px;
-  background: white;
+  background: var(--color-bg-soft);
 }
 
 .project-dashboard__stats span {
@@ -1180,7 +1224,7 @@
   margin-top: 24px;
   padding: 18px;
   border-radius: 16px;
-  background: white;
+  background: var(--color-bg-soft);
 }
 
 .milestone-heading {
@@ -1323,7 +1367,7 @@
   padding: 24px;
   border-radius: 8px;
   background: white;
-  color: var(--color-text);
+  color: #0f172a;
   box-shadow: var(--shadow-xl);
   transform: rotate(4deg);
 }
@@ -1332,7 +1376,7 @@
 .verification-document__footer {
   display: flex;
   justify-content: space-between;
-  color: var(--color-text-muted);
+  color: #64748b;
   font-size: 0.55rem;
   font-weight: 800;
 }
@@ -1346,7 +1390,7 @@
 .verification-document__lines span {
   height: 8px;
   border-radius: 4px;
-  background: var(--color-bg-soft);
+  background: #e2e8f0;
 }
 
 .verification-document__lines span:nth-child(2) {
@@ -1373,7 +1417,7 @@
 
 .verification-document__footer {
   padding-top: 15px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #e2e8f0;
 }
 
 /* =========================================================
@@ -1390,7 +1434,11 @@
   padding: 70px;
   border-radius: 32px;
   background:
-    radial-gradient(circle at 80% 50%, rgb(45 212 191 / 0.15), transparent 30%),
+    radial-gradient(
+      circle at 80% 50%,
+      rgb(45 212 191 / 0.15),
+      transparent 30%
+    ),
     #0b1120;
   color: white;
 }
@@ -1435,7 +1483,11 @@
   margin-inline: auto;
   border: 1px solid rgb(45 212 191 / 0.25);
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(15 118 110 / 0.3), transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgb(15 118 110 / 0.3),
+    transparent 65%
+  );
 }
 
 .diaspora-globe__ring {
@@ -1494,7 +1546,7 @@
 ========================================================= */
 
 .landing-trust {
-  background: white;
+  background: var(--color-bg);
 }
 
 .trust-grid {
@@ -1507,6 +1559,7 @@
   padding: 28px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
+  background: var(--color-surface);
 }
 
 .trust-card__icon {
@@ -1538,7 +1591,7 @@
 
 .landing-cta {
   padding: 40px 0 100px;
-  background: white;
+  background: var(--color-bg);
 }
 
 .landing-cta__inner {
@@ -1549,7 +1602,11 @@
   padding: 64px;
   border-radius: 30px;
   background:
-    radial-gradient(circle at 80% 20%, rgb(45 212 191 / 0.16), transparent 30%),
+    radial-gradient(
+      circle at 80% 20%,
+      rgb(45 212 191 / 0.16),
+      transparent 30%
+    ),
     var(--color-primary);
   color: white;
 }
@@ -1717,7 +1774,7 @@
     gap: 0;
     padding: 18px 24px 26px;
     border-bottom: 1px solid var(--color-border);
-    background: rgb(248 250 252 / 0.98);
+    background: var(--color-bg);
     box-shadow: var(--shadow-lg);
   }
 
@@ -1752,6 +1809,7 @@
 
   .landing-header__mobile-login {
     border: 1px solid var(--color-border);
+    color: var(--color-text);
   }
 
   .landing-header__mobile-cta {
@@ -1935,6 +1993,10 @@
   }
 }
 
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1946,4 +2008,138 @@
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--color-surface-soft);
+  border-color: var(--color-border-strong);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid rgb(15 118 110 / 0.25);
+  outline-offset: 3px;
+}
+
+.theme-toggle:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+
+
+
+/* =========================================================
+   GENERIC SECTIONS
+========================================================= */
+
+.landing-section {
+  padding: var(--section-padding-y) 0;
+}
+
+.landing-section__intro {
+  max-width: 700px;
+  margin-bottom: 54px;
+}
+
+.landing-section__intro--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.landing-section__title {
+  margin-top: 14px;
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.landing-section__title span {
+  color: var(--color-primary);
+}
+
+.landing-section__description {
+  margin-top: 20px;
+  color: var(--color-text-soft);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--color-surface-soft);
+  border-color: var(--color-border-strong);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid rgb(15 118 110 / 0.25);
+  outline-offset: 3px;
+}
+
+.theme-toggle:disabled {
+  cursor: default;
+  opacity: 0.6;
 }
