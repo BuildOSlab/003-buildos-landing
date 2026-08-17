@@ -53,3 +53,114 @@
     width: min(100% - 28px, 1180px);
   }
 }
+
+
+/* =========================================================
+   GLOBAL RESPONSIVE TYPOGRAPHY
+   BuildOS — Unified Type Scale
+========================================================= */
+
+:root {
+  /* =======================================================
+     DISPLAY
+  ======================================================= */
+
+  --text-display: clamp(2.75rem, 5.5vw, 4.75rem);
+
+  /* =======================================================
+     HEADINGS
+  ======================================================= */
+
+  --text-h1: clamp(2.4rem, 4.5vw, 3.75rem);
+  --text-h2: clamp(1.9rem, 3.5vw, 2.75rem);
+  --text-h3: clamp(1.4rem, 2.4vw, 1.85rem);
+  --text-h4: clamp(1.15rem, 1.8vw, 1.4rem);
+
+  /* =======================================================
+     BODY
+  ======================================================= */
+
+  --text-xl: clamp(1.1rem, 1.4vw, 1.2rem);
+  --text-lg: clamp(1rem, 1.2vw, 1.1rem);
+  --text-md: 0.95rem;
+  --text-sm: 0.85rem;
+  --text-xs: 0.75rem;
+
+  /* =======================================================
+     LINE HEIGHT
+  ======================================================= */
+
+  --leading-display: 0.98;
+  --leading-heading: 1.1;
+  --leading-subheading: 1.25;
+  --leading-body: 1.7;
+  --leading-tight: 1.35;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  :root {
+    --text-display: clamp(2.6rem, 7vw, 3.75rem);
+
+    --text-h1: clamp(2.25rem, 6vw, 3.25rem);
+    --text-h2: clamp(1.8rem, 4.5vw, 2.5rem);
+    --text-h3: clamp(1.35rem, 3vw, 1.7rem);
+    --text-h4: clamp(1.1rem, 2.5vw, 1.3rem);
+
+    --text-xl: 1.08rem;
+    --text-lg: 1rem;
+    --text-md: 0.94rem;
+    --text-sm: 0.84rem;
+    --text-xs: 0.74rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  :root {
+    --text-display: clamp(2.25rem, 11vw, 3rem);
+
+    --text-h1: clamp(2rem, 9vw, 2.7rem);
+    --text-h2: clamp(1.7rem, 7vw, 2.2rem);
+    --text-h3: clamp(1.3rem, 5.5vw, 1.6rem);
+    --text-h4: clamp(1.08rem, 4.5vw, 1.25rem);
+
+    --text-xl: 1.05rem;
+    --text-lg: 0.97rem;
+    --text-md: 0.9rem;
+    --text-sm: 0.82rem;
+    --text-xs: 0.72rem;
+
+    --leading-body: 1.65;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+  :root {
+    --text-display: clamp(2.1rem, 11vw, 2.7rem);
+
+    --text-h1: clamp(1.9rem, 9vw, 2.45rem);
+    --text-h2: clamp(1.6rem, 7vw, 2rem);
+    --text-h3: clamp(1.25rem, 5.5vw, 1.5rem);
+    --text-h4: 1.05rem;
+
+    --text-xl: 1rem;
+    --text-lg: 0.94rem;
+    --text-md: 0.88rem;
+    --text-sm: 0.8rem;
+    --text-xs: 0.7rem;
+  }
+}
