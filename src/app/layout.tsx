@@ -18,6 +18,7 @@ import "./../styles/globals/components/logo.css";
 import "./../styles/globals/components/hero.css";
 import "./../styles/globals/components/sections.css";
 import "./../styles/globals/components/marketplace.css";
+import "./../styles/globals/components/how-it-works.css";
 import "./../styles/how-it-works/index.css";
 import "./../styles/globals/components/workforce.css";
 import "./../styles/globals/components/delivery.css";
