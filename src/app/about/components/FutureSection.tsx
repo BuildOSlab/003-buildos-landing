@@ -3,12 +3,12 @@ export default function FutureSection() {
     <section className="about-section about-future">
       <div className="container">
         <div className="about-future__grid">
-          <div>
-            <span className="about-kicker">
+          <div className="about-future__intro">
+            <span className="about-kicker about-future__kicker">
               07 — THE FUTURE
             </span>
 
-            <h2>
+            <h2 className="about-future__heading">
               From construction
               <span>
                 transactions to construction infrastructure.

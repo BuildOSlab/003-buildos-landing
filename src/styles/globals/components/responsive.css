@@ -78,7 +78,7 @@
     padding: 12px;
     border-radius: var(--radius-full);
     text-align: center;
-    font-size: 0.8rem;
+    font-size: var(--text-sm);
     font-weight: 800;
   }
 
@@ -188,7 +188,7 @@
   }
 
   .landing-hero__description {
-    font-size: 1rem;
+    font-size: var(--text-md);
   }
 
   .landing-hero__actions {
@@ -224,7 +224,11 @@
   }
 
   .landing-section__title {
-    font-size: 2.25rem;
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .landing-section__description {
+    font-size: var(--text-md);
   }
 
   .verification-card__content {
@@ -265,6 +269,89 @@
   .landing-footer__bottom {
     flex-direction: column;
     gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui-container {
+    padding-inline: 14px;
+  }
+
+  .landing-hero {
+    padding: 56px 0 72px;
+  }
+
+  .landing-hero__grid,
+  .split-section {
+    gap: 28px;
+  }
+
+  .landing-hero__title {
+    font-size: clamp(2.3rem, 15vw, 3.3rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .landing-hero__description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .landing-button {
+    min-height: 46px;
+    font-size: var(--text-sm);
+  }
+
+  .landing-section__title {
+    font-size: clamp(1.7rem, 9vw, 2.3rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .landing-section__description {
+    font-size: 0.95rem;
+  }
+
+  .project-dashboard {
+    padding: 18px 14px;
+  }
+
+  .project-dashboard__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .project-dashboard__header strong {
+    font-size: var(--text-md);
+  }
+
+  .project-dashboard__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .project-dashboard__stats div {
+    padding: 10px 9px;
+  }
+
+  .milestone {
+    gap: 10px;
+  }
+
+  .milestone__check {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+  }
+
+  .landing-cta__inner {
+    padding: 34px 20px;
+  }
+
+  .landing-footer__columns {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 }
 

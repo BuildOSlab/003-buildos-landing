@@ -3,14 +3,14 @@ export default function VisionSection() {
     <section className="about-section about-vision">
       <div className="container">
         <div className="about-vision__grid">
-          <div className="about-vision__heading">
-            <span className="about-kicker">
+          <div className="about-vision__heading about-vision__intro">
+            <span className="about-kicker about-vision__kicker">
               04 — OUR VISION
             </span>
 
-            <h2>
+            <h2 className="about-vision__heading-title">
               One connected ecosystem
-              <span> for construction.</span>
+              <span>for construction.</span>
             </h2>
           </div>
 

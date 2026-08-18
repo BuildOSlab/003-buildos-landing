@@ -114,7 +114,7 @@
 
   color: var(--color-primary);
 
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   font-weight: 850;
 }
 
@@ -130,7 +130,7 @@
 
   color: var(--color-text);
 
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   font-weight: 800;
 }
 
@@ -144,7 +144,7 @@
 
   color: var(--color-text-soft);
 
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   line-height: 1.7;
 }
 

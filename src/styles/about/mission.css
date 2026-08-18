@@ -18,17 +18,28 @@
 
 .about-mission__grid strong {
   color: var(--color-primary);
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
 }
 
 .about-mission__grid h3 {
   margin-top: 55px;
-  font-size: 1.4rem;
+  font-size: var(--text-h4);
 }
 
 .about-mission__grid p {
   margin-top: 12px;
   color: var(--color-text-muted);
-  font-size: 0.84rem;
+  font-size: var(--text-sm);
   line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .about-mission__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-mission__grid article {
+    padding: 24px 20px;
+  }
 }

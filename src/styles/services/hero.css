@@ -72,7 +72,7 @@
 
   color: var(--color-text-muted);
 
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 
   transition:
@@ -100,5 +100,31 @@
 
   .services-hero p {
     margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero {
+    padding: 84px 0 56px;
+  }
+
+  .services-hero h1 {
+    font-size: clamp(2.2rem, 14vw, 3.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  .services-hero p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .services-hero__tags {
+    gap: 8px;
+  }
+
+  .services-hero__tags span {
+    font-size: 0.72rem;
+    padding: 8px 12px;
   }
 }

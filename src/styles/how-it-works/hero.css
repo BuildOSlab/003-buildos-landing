@@ -37,7 +37,7 @@
 
   color: var(--color-text-soft);
 
-  font-size: 1.1rem;
+  font-size: var(--text-lg);
   line-height: 1.8;
 }
 
@@ -61,7 +61,7 @@
 
   color: var(--color-text);
 
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   font-weight: 750;
 
   box-shadow: var(--shadow-sm);
@@ -82,5 +82,27 @@
 
   .how-it-works-hero__flow {
     gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works-hero {
+    padding: 90px 0 64px;
+  }
+
+  .how-it-works-hero h1 {
+    font-size: clamp(2.2rem, 14vw, 3.1rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .how-it-works-hero p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .how-it-works-hero__flow span {
+    font-size: 0.7rem;
+    padding: 8px 12px;
   }
 }

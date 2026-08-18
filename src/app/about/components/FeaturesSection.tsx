@@ -95,14 +95,14 @@ export default function FeaturesSection() {
   return (
     <section className="about-section about-features">
       <div className="container">
-        <div className="about-section__intro">
-          <span className="about-kicker">
+        <div className="about-section__intro about-features__intro">
+          <span className="about-kicker about-features__kicker">
             06 — THE BUILDOS ECOSYSTEM
           </span>
 
-          <h2>
+          <h2 className="about-features__heading">
             Built around the
-            <span> construction lifecycle.</span>
+            <span>construction lifecycle.</span>
           </h2>
 
           <p>

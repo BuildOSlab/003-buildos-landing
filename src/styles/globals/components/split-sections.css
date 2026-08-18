@@ -46,13 +46,13 @@
 }
 
 .feature-list__item h3 {
-  font-size: 0.95rem;
+  font-size: var(--text-md);
 }
 
 .feature-list__item p {
   margin-top: 3px;
   color: var(--color-text-muted);
-  font-size: 0.78rem;
+  font-size: var(--text-sm);
 }
 
 .feature-list__arrow {

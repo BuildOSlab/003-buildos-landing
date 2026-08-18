@@ -32,7 +32,7 @@
 .how-it-works-path__label {
   color: var(--color-primary);
 
-  font-size: 0.68rem;
+  font-size: var(--text-xs);
   font-weight: 850;
   letter-spacing: 0.12em;
 }
@@ -44,7 +44,7 @@
 
   color: var(--color-text);
 
-  font-size: 1.45rem;
+  font-size: var(--text-h4);
   line-height: 1.25;
 }
 
@@ -66,14 +66,14 @@
 .how-it-works-path__step > span {
   color: var(--color-text-muted);
 
-  font-size: 0.65rem;
+  font-size: var(--text-xs);
   font-weight: 800;
 }
 
 .how-it-works-path__step strong {
   color: var(--color-text);
 
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
 }
 
 .how-it-works-path__step i {

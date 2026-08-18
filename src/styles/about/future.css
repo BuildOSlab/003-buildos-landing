@@ -6,6 +6,35 @@
   display: grid;
   grid-template-columns: 1fr 0.8fr;
   gap: 100px;
+  align-items: start;
+}
+
+.about-future__intro {
+  width: min(100%, 760px);
+}
+
+.about-future__kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid rgb(15 118 110 / 0.18);
+  border-radius: var(--radius-full);
+  background: rgb(15 118 110 / 0.04);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2);
+}
+
+.about-future__heading {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4.1rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+}
+
+.about-future__heading span {
+  display: block;
+  margin-top: 0.18em;
+  color: var(--color-primary);
 }
 
 .about-future__grid > div:last-child {
@@ -19,4 +48,35 @@
 
 .about-future__grid p + p {
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-vision__grid,
+  .about-future__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-vision__heading {
+    position: static;
+  }
+
+  .about-vision__heading-title,
+  .about-future__heading {
+    font-size: clamp(2.1rem, 8vw, 3.1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-vision__kicker,
+  .about-future__kicker {
+    padding: 8px 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .about-vision__heading-title,
+  .about-future__heading {
+    font-size: clamp(1.7rem, 9vw, 2.5rem);
+    letter-spacing: -0.05em;
+  }
 }
