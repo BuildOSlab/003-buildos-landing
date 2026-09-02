@@ -15,6 +15,7 @@ import "./../styles/globals/base.css";
 import "./../styles/globals/components/layout.css";
 import "./../styles/globals/components/header.css";
 import "./../styles/globals/components/logo.css";
+import "./../styles/globals/components/auth.css";
 import "./../styles/globals/components/hero.css";
 import "./../styles/globals/components/sections.css";
 import "./../styles/globals/components/marketplace.css";
@@ -38,6 +39,7 @@ import "./../styles/utilities/utilities.css";
 import "./../styles/animations/animations.css";
 import "./../styles/responsive/breakpoints.css";
 import "./../styles/privacy/legal.css";
+import "./../styles/globals/components/dashboard.css";
 
 export const metadata: Metadata = {
   title: "BuildOS — The Operating Platform for Construction",
