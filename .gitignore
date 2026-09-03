@@ -36,3 +36,5 @@ pnpm-debug.log*
 # macOS
 .AppleDouble
 .LSOverride
+.vercel
+.env*
