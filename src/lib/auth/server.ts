@@ -5,6 +5,22 @@ import type {
   RegisterRequest,
 } from "./types";
 
+export class AuthApiError extends Error {
+  readonly status: number;
+  readonly code?: string;
+
+  constructor(
+    message: string,
+    status: number,
+    code?: string,
+  ) {
+    super(message);
+    this.name = "AuthApiError";
+    this.status = status;
+    this.code = code;
+  }
+}
+
 function getAuthApiUrl(): string {
   const value = process.env.AUTH_API_URL?.trim();
 
@@ -84,8 +100,10 @@ export async function loginWithAuthService(
   const payload = await parseResponse<AuthTokens>(response);
 
   if (!response.ok) {
-    throw new Error(
+    throw new AuthApiError(
       payload.error?.message ?? "Unable to log in.",
+      response.status,
+      payload.error?.code,
     );
   }
 
@@ -112,9 +130,11 @@ export async function registerWithAuthService(
   const payload = await parseResponse<AuthTokens>(response);
 
   if (!response.ok) {
-    throw new Error(
+    throw new AuthApiError(
       payload.error?.message ??
         "Unable to create your account.",
+      response.status,
+      payload.error?.code,
     );
   }
 
@@ -140,7 +160,10 @@ export async function logoutWithAuthService(
   );
 
   if (!response.ok) {
-    throw new Error("Unable to complete logout.");
+    throw new AuthApiError(
+      "Unable to complete logout.",
+      response.status,
+    );
   }
 }
 
@@ -165,9 +188,11 @@ export async function refreshWithAuthService(
   const payload = await parseResponse<AuthTokens>(response);
 
   if (!response.ok) {
-    throw new Error(
+    throw new AuthApiError(
       payload.error?.message ??
         "Unable to refresh the session.",
+      response.status,
+      payload.error?.code,
     );
   }
 
