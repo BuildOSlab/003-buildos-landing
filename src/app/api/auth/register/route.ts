@@ -1,3 +1,5 @@
+import crypto from "node:crypto";
+
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
@@ -30,54 +32,69 @@ export async function POST(request: Request) {
       );
     }
 
-    const tokens = await registerWithAuthService({
-      email:
-        typeof body.email === "string"
-          ? body.email.trim()
-          : undefined,
+    /*
+     * The frontend owns the idempotency key for a registration attempt.
+     *
+     * If the frontend retries the same registration request, it sends
+     * the same Idempotency-Key again.
+     *
+     * The fallback keeps the API safe for clients that do not provide one.
+     */
+    const idempotencyKey =
+      request.headers.get("Idempotency-Key")?.trim() ||
+      `registration-${crypto.randomUUID()}`;
 
-      phone:
-        typeof body.phone === "string"
-          ? body.phone.trim()
-          : undefined,
+    const tokens = await registerWithAuthService(
+      {
+        email:
+          typeof body.email === "string"
+            ? body.email.trim()
+            : undefined,
 
-      username:
-        typeof body.username === "string"
-          ? body.username.trim()
-          : undefined,
+        phone:
+          typeof body.phone === "string"
+            ? body.phone.trim()
+            : undefined,
 
-      first_name:
-        typeof body.first_name === "string"
-          ? body.first_name.trim()
-          : undefined,
+        username:
+          typeof body.username === "string"
+            ? body.username.trim()
+            : undefined,
 
-      last_name:
-        typeof body.last_name === "string"
-          ? body.last_name.trim()
-          : undefined,
+        first_name:
+          typeof body.first_name === "string"
+            ? body.first_name.trim()
+            : undefined,
 
-      display_name:
-        typeof body.display_name === "string"
-          ? body.display_name.trim()
-          : undefined,
+        last_name:
+          typeof body.last_name === "string"
+            ? body.last_name.trim()
+            : undefined,
 
-      country:
-        typeof body.country === "string"
-          ? body.country.trim()
-          : undefined,
+        display_name:
+          typeof body.display_name === "string"
+            ? body.display_name.trim()
+            : undefined,
 
-      timezone:
-        typeof body.timezone === "string"
-          ? body.timezone.trim()
-          : undefined,
+        country:
+          typeof body.country === "string"
+            ? body.country.trim()
+            : undefined,
 
-      language:
-        typeof body.language === "string"
-          ? body.language.trim()
-          : undefined,
+        timezone:
+          typeof body.timezone === "string"
+            ? body.timezone.trim()
+            : undefined,
 
-      password: body.password,
-    });
+        language:
+          typeof body.language === "string"
+            ? body.language.trim()
+            : undefined,
+
+        password: body.password,
+      },
+      idempotencyKey,
+    );
 
     const cookieStore = await cookies();
 

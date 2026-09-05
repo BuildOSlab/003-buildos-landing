@@ -77,10 +77,6 @@ function extractTokens(
   };
 }
 
-function createIdempotencyKey(): string {
-  return `registration-${crypto.randomUUID()}`;
-}
-
 export async function loginWithAuthService(
   input: LoginRequest,
 ): Promise<AuthTokens> {
@@ -112,7 +108,14 @@ export async function loginWithAuthService(
 
 export async function registerWithAuthService(
   input: RegisterRequest,
+  idempotencyKey: string,
 ): Promise<AuthTokens> {
+  const normalizedIdempotencyKey = idempotencyKey.trim();
+
+  if (!normalizedIdempotencyKey) {
+    throw new Error("Registration idempotency key is required.");
+  }
+
   const response = await fetch(
     `${getAuthApiUrl()}/api/v1/auth/register`,
     {
@@ -120,7 +123,7 @@ export async function registerWithAuthService(
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "Idempotency-Key": createIdempotencyKey(),
+        "Idempotency-Key": normalizedIdempotencyKey,
       },
       body: JSON.stringify(input),
       cache: "no-store",
