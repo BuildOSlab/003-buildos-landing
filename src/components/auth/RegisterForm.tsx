@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -14,52 +14,61 @@ export default function RegisterForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const registrationKeyRef = useRef<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setError("");
+        
+      event.preventDefault();
+      setError("");
 
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      const response = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          username: username || undefined,
-          display_name: displayName || undefined,
-          password,
-        }),
-      });
-
-      const payload = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          payload?.error?.message ?? "Unable to create your account.",
-        );
+      if (password !== confirmPassword) {
+        setError("Passwords do not match.");
+        return;
       }
 
-      router.push("/");
-      router.refresh();
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Unable to create your account.",
-      );
-    } finally {
-      setLoading(false);
+      setLoading(true);
+
+      try {
+        const idempotencyKey =
+          registrationKeyRef.current ?? crypto.randomUUID();
+
+        registrationKeyRef.current = idempotencyKey;
+
+        const response = await fetch("/api/auth/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Idempotency-Key": idempotencyKey,
+          },
+          body: JSON.stringify({
+            email,
+            username: username || undefined,
+            display_name: displayName || undefined,
+            password,
+          }),
+        });
+
+        const payload = await response.json();
+
+        if (!response.ok) {
+          throw new Error(
+            payload?.error?.message ?? "Unable to create your account.",
+          );
+        }
+
+        registrationKeyRef.current = null;
+        router.push("/");
+        router.refresh();
+      } catch (err) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Unable to create your account.",
+        );
+      } finally {
+        setLoading(false);
+      }
     }
-  }
 
   return (
     <form className="auth-form" onSubmit={handleSubmit}>
