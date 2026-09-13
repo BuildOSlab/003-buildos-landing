@@ -1,7 +1,6 @@
 import crypto from "node:crypto";
 
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 
 import {
   AuthApiError,
@@ -35,10 +34,9 @@ export async function POST(request: Request) {
     /*
      * The frontend owns the idempotency key for a registration attempt.
      *
-     * If the frontend retries the same registration request, it sends
-     * the same Idempotency-Key again.
-     *
-     * The fallback keeps the API safe for clients that do not provide one.
+     * Repeated submissions of the same registration attempt reuse
+     * the same key. A fallback is provided for clients that do not
+     * send one.
      */
     const idempotencyKey =
       request.headers.get("Idempotency-Key")?.trim() ||
@@ -96,35 +94,48 @@ export async function POST(request: Request) {
       idempotencyKey,
     );
 
-    const cookieStore = await cookies();
+    /*
+     * Create the response first, then attach the authentication
+     * cookies directly to that response.
+     *
+     * This guarantees that the HTTP response returned to the
+     * browser contains the Set-Cookie headers.
+     */
+    const response = NextResponse.json(
+      {
+        success: true,
+      },
+      { status: 200 },
+    );
 
-    cookieStore.set(
+    const isProduction =
+      process.env.NODE_ENV === "production";
+
+    response.cookies.set(
       ACCESS_COOKIE,
       tokens.access_token,
       {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: isProduction,
         sameSite: "lax",
         path: "/",
         maxAge: tokens.expires_in ?? 900,
       },
     );
 
-    cookieStore.set(
+    response.cookies.set(
       REFRESH_COOKIE,
       tokens.refresh_token,
       {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: isProduction,
         sameSite: "lax",
         path: "/",
         maxAge: 60 * 60 * 24 * 30,
       },
     );
 
-    return NextResponse.json({
-      success: true,
-    });
+    return response;
   } catch (error) {
     if (error instanceof AuthApiError) {
       return NextResponse.json(
@@ -160,3 +171,4 @@ export async function POST(request: Request) {
     );
   }
 }
+

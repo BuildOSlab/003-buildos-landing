@@ -57,7 +57,7 @@ export default function RegisterForm() {
         }
 
         registrationKeyRef.current = null;
-        router.push("/");
+        router.push("/dashboard");
         router.refresh();
       } catch (err) {
         setError(
