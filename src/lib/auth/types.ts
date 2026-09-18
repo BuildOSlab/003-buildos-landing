@@ -71,3 +71,11 @@ export function getApiErrorMessage(
 ): string {
   return payload.error?.message ?? fallback;
 }
+
+export interface AuthenticatedUserContext {
+  authenticated: true;
+  user_id: string;
+  context_type: string;
+  organization_id?: string | null;
+  membership_id?: string | null;
+}

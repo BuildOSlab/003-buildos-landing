@@ -1,5 +1,6 @@
 import type {
   AuthApiResponse,
+  AuthenticatedUserContext,
   AuthTokens,
   LoginRequest,
   RegisterRequest,
@@ -142,6 +143,61 @@ export async function registerWithAuthService(
   }
 
   return extractTokens(payload);
+}
+
+export async function getCurrentUserWithAuthService(
+  accessToken: string,
+): Promise<AuthenticatedUserContext> {
+  const normalizedAccessToken = accessToken.trim();
+
+  if (!normalizedAccessToken) {
+    throw new AuthApiError(
+      "Access token is required.",
+      401,
+      "MISSING_ACCESS_TOKEN",
+    );
+  }
+
+  const response = await fetch(
+    `${getAuthApiUrl()}/api/v1/auth/me`,
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${normalizedAccessToken}`,
+      },
+      cache: "no-store",
+    },
+  );
+
+  const payload =
+    await parseResponse<AuthenticatedUserContext>(response);
+
+  if (!response.ok) {
+    throw new AuthApiError(
+      payload.error?.message ??
+        "Unable to validate the authentication session.",
+      response.status,
+      payload.error?.code,
+    );
+  }
+
+  const source =
+    payload.data ??
+    (payload as unknown as AuthenticatedUserContext);
+
+  if (
+    !source ||
+    source.authenticated !== true ||
+    !source.user_id ||
+    !source.context_type
+  ) {
+    throw new Error(
+      "Authentication service returned an invalid authenticated-user response.",
+    );
+  }
+
+  return source;
 }
 
 export async function logoutWithAuthService(
